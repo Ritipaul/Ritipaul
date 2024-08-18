@@ -1,0 +1,25 @@
+class ATM:
+    def __init__(self):
+        self.balance = 0
+
+    def check_balance(self):
+        return f"Your current balance is Rs {self.balance}"
+
+    def deposit(self, amount):
+        self.balance += amount
+        return f"Deposited Rs {amount}. New balance: Rs {self.balance}"
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            return f"Withdrew Rs {amount}. New balance: Rs {self.balance}"
+        else:
+            return "Insufficient funds."
+
+# Example usage
+if __name__ == "__main__":
+    atm = ATM()
+    print(atm.check_balance())
+    print(atm.deposit(100))
+    print(atm.withdraw(50))
+    print(atm.check_balance())
